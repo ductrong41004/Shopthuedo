@@ -1,26 +1,152 @@
+/* Font được load qua next/font/google trong layout.tsx — hỗ trợ Vietnamese đầy đủ */
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFDFB; /* Trắng ấm/Ivory */
+  --foreground: #4C0519; /* Đỏ mận/Hồng cực đậm để đảm bảo độ tương phản */
+  --border: #FCE7F3;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* Font chữ — Be Vietnam Pro hỗ trợ 100% tiếng Việt */
+  --font-serif: "Be Vietnam Pro", system-ui, sans-serif;
+  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
+  
+  /* Bảng màu Pastel Hồng - Be - Trắng */
+  --color-brand-pink: #FFF0F5;          /* Hồng Lavender nhẹ nhàng */
+  --color-brand-pink-pastel: #FCE7F3;   /* Hồng pastel trung tính */
+  --color-brand-beige: #FAF5F0;         /* Be nhạt ấm áp */
+  --color-brand-white: #FFFDFB;         /* Nền trắng ngà sang trọng */
+  
+  /* Màu chủ đạo / Nút nhấn */
+  --color-primary: #DB2777;             /* Hồng Sen đậm làm điểm nhấn */
+  --color-primary-hover: #BE185D;
+  --color-primary-pastel: #FBCFE8;      /* Viền hồng nhạt */
+  
+  /* Màu Accent / Luxury Gold */
+  --color-accent-gold: #D97706;         /* Vàng đồng sang trọng */
+  --color-accent-gold-hover: #B45309;
+  
+  /* Màu chữ */
+  --color-text-dark: #4C0519;           /* Chữ chính */
+  --color-text-muted: #831843;          /* Chữ phụ */
+  --color-text-gray: #71717A;           /* Chữ xám tiêu chuẩn */
+  
+  /* Bo góc & Bóng đổ */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  --shadow-lux: 0 10px 30px -10px rgba(219, 39, 119, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-lux-lg: 0 20px 40px -15px rgba(219, 39, 119, 0.12), 0 1px 5px rgba(0, 0, 0, 0.03);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Các lớp tiện ích thiết kế (UI/UX Pro Max rules) */
+
+/* Nút bấm */
+.btn-primary {
+  background-color: #DB2777;
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.2);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: #BE185D;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(219, 39, 119, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background-color: #FFF0F5;
+  color: #DB2777;
+  border: 1px solid #FBCFE8;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background-color: #FCE7F3;
+  color: #BE185D;
+  transform: translateY(-1px);
+}
+
+/* Thẻ Card phong cách Luxury Soft */
+.glass-card {
+  background: rgba(255, 253, 251, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(252, 231, 243, 0.6);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lux);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lux-lg);
+  border-color: rgba(252, 231, 243, 1);
+}
+
+/* Tiêu đề thanh lịch — dùng Be Vietnam Pro weight cao cho heading */
+.heading-serif {
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #4C0519;
+}
+
+/* Tùy chỉnh thanh cuộn */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDFB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FBCFE8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F472B6;
+}
+
+/* Ẩn thanh cuộn mặc định của trình duyệt */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
