@@ -1,0 +1,21 @@
+{
+  "name": "Thuê Đồ Quýt Nhỏ",
+  "short_name": "Quýt Nhỏ",
+  "description": "Hệ thống quản lý chuyên nghiệp cho thuê quần áo, váy, đầm và phụ kiện chụp ảnh tại Phú Quốc.",
+  "start_url": "/Shopthuedo/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#db2777",
+  "icons": [
+    {
+      "src": "/Shopthuedo/Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Shopthuedo/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
