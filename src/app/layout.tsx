@@ -14,6 +14,16 @@ const beVietnamPro = Be_Vietnam_Pro({
 export const metadata: Metadata = {
   title: "Thuê Đồ Quýt Nhỏ - Quản Lý Shop Thuê Đồ",
   description: "Hệ thống quản lý chuyên nghiệp cho thuê quần áo, váy, đầm và phụ kiện chụp ảnh tại Phú Quốc.",
+  manifest: "/Shopthuedo/manifest.json",
+  icons: {
+    icon: "/Shopthuedo/Logo.png",
+    apple: "/Shopthuedo/Logo.png",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Thuê Đồ Quýt Nhỏ",
+  },
 };
 
 export default function RootLayout({
